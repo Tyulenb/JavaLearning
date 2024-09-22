@@ -5,13 +5,22 @@ import java.awt.*;
 
 public class Circle extends Figure{
     private int radius;
+
+    public Circle(int x, int y,Color color, Boolean isVisible,int radius) {
+        this.coordX = x;
+        this.coordY = y;
+        this.color = color;
+        this.isVisible = isVisible;
+        this.radius = radius;
+    }
+
     @Override
     void Draw(Graphics g) {
         g.setColor(color);
         if(!isVisible){
-            g.drawOval(20,20, radius, radius);
+            g.drawOval(coordX,coordY, radius, radius);
         }else{
-           g.fillOval(20,20,100,100);
+            g.fillOval(coordX,coordY,100,100);
         }
 
     }

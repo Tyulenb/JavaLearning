@@ -3,14 +3,24 @@ package lesson4;
 import java.awt.*;
 
 public class Rectangle extends Figure{
-    private int a, b;
+    protected int a, b;
+
+    public Rectangle(int x, int y, Color color, Boolean isVisible, int a, int b){
+        this.coordX = x;
+        this.coordY = y;
+        this.color = color;
+        this.isVisible = isVisible;
+        this.a = a;
+        this.b = b;
+    }
+
     @Override
     void Draw(Graphics g) {
         g.setColor(color);
         if(!isVisible){
-            g.drawRect(10,10,a,b);
+            g.drawRect(coordX,coordY,a,b);
         }else {
-            g.fillRect(10,10,a,b);
+            g.fillRect(coordX,coordY,a,b);
         }
     }
 
